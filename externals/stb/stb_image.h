@@ -2155,7 +2155,7 @@ stbi_inline static int stbi__extend_receive(stbi__jpeg *j, int n)
    unsigned int k;
    int sgn;
    if (j->code_bits < n) stbi__grow_buffer_unsafe(j);
-   if (j->code_bits < n) return 0; // ran out of bits from stream, return 0s intead of continuing
+   if (j->code_bits < n) return 0; // ran out of bits from stream, return 0s instead of continuing
 
    sgn = j->code_buffer >> 31; // sign bit always in MSB; 0 if MSB clear (positive), 1 if MSB set (negative)
    k = stbi_lrot(j->code_buffer, n);
@@ -2170,7 +2170,7 @@ stbi_inline static int stbi__jpeg_get_bits(stbi__jpeg *j, int n)
 {
    unsigned int k;
    if (j->code_bits < n) stbi__grow_buffer_unsafe(j);
-   if (j->code_bits < n) return 0; // ran out of bits from stream, return 0s intead of continuing
+   if (j->code_bits < n) return 0; // ran out of bits from stream, return 0s instead of continuing
    k = stbi_lrot(j->code_buffer, n);
    j->code_buffer = k & ~stbi__bmask[n];
    k &= stbi__bmask[n];
@@ -2182,7 +2182,7 @@ stbi_inline static int stbi__jpeg_get_bit(stbi__jpeg *j)
 {
    unsigned int k;
    if (j->code_bits < 1) stbi__grow_buffer_unsafe(j);
-   if (j->code_bits < 1) return 0; // ran out of bits from stream, return 0s intead of continuing
+   if (j->code_bits < 1) return 0; // ran out of bits from stream, return 0s instead of continuing
    k = j->code_buffer;
    j->code_buffer <<= 1;
    --j->code_bits;

@@ -683,7 +683,7 @@ void CheatsPatches::downloadCheats(const QString& source, const QString& gameSer
         emit downloadFinished();
     });
 
-    // connect(reply, &QNetworkReply::errorOccurred, [=](QNetworkReply::NetworkError code) {
+    // connect(reply, &QNetworkReply::errorOccured, [=](QNetworkReply::NetworkError code) {
     //     if (showMessageBox)
     //         QMessageBox::warning(this, "Download Error",
     //                              QString("Error in response: %1").arg(reply->errorString()));
