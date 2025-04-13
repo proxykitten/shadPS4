@@ -18,7 +18,7 @@ bool IsActive();
 /// Starts the logging threads.
 void Start();
 
-/// Explictily stops the logger thread and flushes the buffers
+/// Explicitly stops the logger thread and flushes the buffers
 void Stop();
 
 /// The global filter will prevent any messages from even being processed if they are filtered.

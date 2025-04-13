@@ -798,7 +798,7 @@ inline Error check_gcm_cond(const std::size_t key_size, const std::size_t iv_siz
  * @param [in]  pads If this value is true, encrypted data is padded by PKCS.
  *  Encrypted data size must be multiple of 16.
  *  If the pads is true, encrypted data is padded with PKCS.
- *  So the data is multiple of 16, encrypted data size needs additonal 16 bytes.
+ *  So the data is multiple of 16, encrypted data size needs additional 16 bytes.
  * @since 1.0.0
  */
 inline Error encrypt_ecb(const unsigned char* data, const unsigned long data_size,
@@ -945,7 +945,7 @@ inline Error encrypt_cbc(const unsigned char* data, const unsigned long data_siz
         detail::encrypt_state(rkeys, s, encrypted + offset);
     }
 
-    // enctypt last
+    // encrypt last
     if (pads && ge16) {
         std::vector<unsigned char> ib(detail::kStateSize, pad_v), ob(detail::kStateSize);
         memcpy(&ib[0], data + data_size - rem, rem);
